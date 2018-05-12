@@ -21,7 +21,6 @@ import com.google.gson.Gson;
  */
 
 public class ResearchResultActivity extends Activity{
-    private String searchLists;
     private ListView listView_searchresult;
     private TextView txt_title;
     private ResearchList the_Question_list;

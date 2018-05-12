@@ -21,18 +21,10 @@ import java.io.File;
 
 public class ElavenUserInfoHelper {
 
+    public Carrier carrierInst;
     private Context context;
-    private String userid;
-    private String address;
-
-    public String getUserid() {
-        return userid;
-    }
-
-
-    public String getAddress() {
-        return address;
-    }
+    //private String userid;
+    //private String address;
 
     public ElavenUserInfoHelper(Context context) {
         this.context = context;
@@ -45,16 +37,15 @@ public class ElavenUserInfoHelper {
             TestHandler handler = new TestHandler();
 
             //1.1获得Carrier的实例
-
-            Carrier carrierInst = Carrier.getInstance(options, handler);
+            carrierInst = Carrier.getInstance(options, handler);
 
             //1.2获得Carrier的地址
-            address = carrierInst.getAddress();
-            Log.i(Utils.log_info_tag, "address: " + address);
+            //address = carrierInst.getAddress();
+            //Log.i(Utils.log_info_tag, "address: " + address);
 
             //1.3获得Carrier的用户ID
-            userid = carrierInst.getUserId();
-            Log.i(Utils.log_info_tag, "userID: " + userid);
+            //userid = carrierInst.getUserId();
+            //Log.i(Utils.log_info_tag, "userID: " + userid);
 
         } catch (ElastosException e) {
             e.printStackTrace();

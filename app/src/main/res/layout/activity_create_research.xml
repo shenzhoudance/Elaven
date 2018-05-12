@@ -32,7 +32,16 @@
         style="@style/_but_bottom"
         android:background="@color/_orange7"
         android:textSize="@dimen/text_14"
-        android:layout_margin="10dp"
+        android:layout_marginBottom="60dp"
         android:text="@string/new_question"
+        android:layout_alignParentBottom="true"></TextView>
+
+    <TextView
+        android:id="@+id/txt_sendtoFriend"
+        style="@style/_but_bottom"
+        android:background="@color/_orange7"
+        android:textSize="@dimen/text_14"
+        android:layout_marginBottom="10dp"
+        android:text="@string/sen_qrsearch"
         android:layout_alignParentBottom="true"></TextView>
 </RelativeLayout>

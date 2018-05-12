@@ -21,12 +21,13 @@ import org.json.JSONObject;
 import java.io.File;
 
 import static com.example.helloketty.util.Utils.default_file_directory;
+import static com.example.helloketty.util.Utils.log_info_tag;
 
 /**
  * Created by Houfa.Zhou on 2018/5/10.
  */
 
-public class WelcomeActivity extends Activity{
+public class WelcomeActivity extends ElavenActivity{
 
     @Override
     protected void onCreate(Bundle arg0) {
@@ -37,20 +38,20 @@ public class WelcomeActivity extends Activity{
         initPage();
     }
 
-    private void initPage() {
+    private  void  initPage(){
         initLogin();
     }
 
     private void initLogin() {
 
-        ElavenUser user = initUserInfo();
-
-        Bundle bundle = new Bundle();
-        bundle.putString("userJson", user.toString());
-        Intent intent=new Intent(WelcomeActivity.this, RegisterActivity.class);
-        intent.putExtras(bundle);
+        Intent intent = new Intent(WelcomeActivity.this, RegisterActivity.class);
         startActivity(intent);
         finish();
+        //ElavenUser user = initUserInfo();
+        //Bundle bundle = new Bundle();
+        //bundle.putString("userJson", user.toString());
+        //Intent intent = new Intent(WelcomeActivity.this, RegisterActivity.class);
+        //intent.putExtras(bundle);
     }
 
     /*
@@ -80,6 +81,7 @@ public class WelcomeActivity extends Activity{
         });
     }
 */
+    /*
     private ElavenUser initUserInfo (){
 
         File file = new File(default_file_directory, Utils.userinfo_file_name);
@@ -91,6 +93,7 @@ public class WelcomeActivity extends Activity{
             user.setAddress(datas[1]);
         }
         else {
+            Log.i(log_info_tag, "need load file datas");
             Gson gson = new Gson();
             String data = FileUtil.getFile(Utils.userinfo_file_name);
             user = gson.fromJson(data, ElavenUser.class);
@@ -99,7 +102,7 @@ public class WelcomeActivity extends Activity{
         return user;
     }
 
-    private String createUserIdAndAddress (){
+    private String createUserIdAndAddress1 (){
         ElavenUserInfoHelper helper = new ElavenUserInfoHelper(WelcomeActivity.this);
         String userid = helper.getUserid();
         String address = helper.getAddress();
@@ -107,5 +110,6 @@ public class WelcomeActivity extends Activity{
         return userid + ","+ address;
     }
 
+*/
 
 }
